@@ -5,7 +5,7 @@
   "scripts": {
     "production": "node ./server/bin/www",
     "start": "./node_modules/.bin/nf --procfile Procfile.dev start -p 3000",
-    "dev": "nodemon ./bin/www",
+    "dev": "./node_modules/.bin/nf --procfile Procfile.dev start -p 3000",
     "postinstall": "cd client && npm install"
   },
   "dependencies": {
@@ -16,8 +16,10 @@
     "express": "~4.15.5",
     "hbs": "~4.0.1",
     "morgan": "~1.9.0",
+    "nodemon": "^1.12.1",
     "react-axios": "^1.0.3",
     "react-router-dom": "^4.2.2",
+    "react-scripts": "^1.0.14",
     "serve-favicon": "~2.4.5"
   },
   "devDependencies": {

@@ -40,9 +40,5 @@ class Root extends Component {
   }
 }
 
-
-/*Root.propTypes = {
-  message: React.PropTypes.string
-};*/
 export default Root;
 //export default RootContainer;
