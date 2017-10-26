@@ -14,14 +14,11 @@ ReactDOM.render(
       <div>
         <App />
         <BrowserRouter>
-        <Switch>
-          <Route exact path='/' component={Root}/>
-          <Route path='/foo' component={Foo}/>
-        </Switch>
+          <Switch>
+            <Route exact path='/' component={Root}/>
+            <Route path='/foo' component={Foo}/>
+          </Switch>
         </BrowserRouter>
-    </div>
-
-      /*<Route path="/" component={Root}/>
-      <Route path="/foo" component={Foo}/>*/
-, document.getElementById('root'));
+    </div>,
+    document.getElementById('root'));
 registerServiceWorker();
