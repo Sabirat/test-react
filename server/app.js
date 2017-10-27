@@ -1,4 +1,5 @@
 var express = require('express');
+var fs = require('fs');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -43,6 +44,18 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
+});
+
+var reactBase = path.resolve(__dirname, '../client/build')
+if (!fs.existsSync(reactBase)) {
+  throw 'TODO, need to `npm run build` in client dir'
+}
+app.use('/static', express.static(path.join(reactBase, 'static')));
+// app.use(express.static(reactBase));
+var indexFile = path.join(reactBase, 'index.html')
+app.use(function(req, res, next) {
+  // TODO - catch errors http://expressjs.com/en/api.html#res.sendFile
+  res.sendFile(indexFile);
 });
 
 module.exports = app;

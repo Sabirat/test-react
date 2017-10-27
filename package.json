@@ -6,7 +6,7 @@
     "production": "node ./server/bin/www",
     "start": "./node_modules/.bin/nf --procfile Procfile.dev start -p 3000",
     "dev": "./node_modules/.bin/nf --procfile Procfile.dev start -p 3000",
-    "postinstall": "cd client && npm install"
+    "postinstall": "cd client && npm install && npm run build"
   },
   "dependencies": {
     "axios": "^0.17.0",
